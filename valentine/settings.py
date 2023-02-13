@@ -23,7 +23,7 @@ TEMPLATE_DIR = BASE_DIR / 'valentine_app/templates'
 SECRET_KEY = 'django-insecure-r_h^wb$!t+-)hqynzr=nqu8n1sl=%=x8+=*6(a9327ltevwm6b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
