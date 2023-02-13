@@ -1,0 +1,53 @@
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body style="width: auto; height: auto; overflow: auto;">
+    <div id="container" class="quiz-container">
+        <h1 id="quiz-text">Štai tau testas ar nusipelnei būti mano valentinas. <br> Šiaip rezultatas, kad išlaikyti būna 40%, bet kadangi tu pretenduoji į vietą būti MANO valentinu, tau reiks pasistengt, todėl tau reikia surinkt 100% <3</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {% for q in questions %}
+            <div class="question" >
+                <h1>{{q.question}}</h1>
+                <hr>
+                <div class="quiz-choice">
+                    <input class="quiz-choice-input" type="radio" name="question_{{ q.id }}" id="gridRadio1" value="{{q.opt1}}" required>
+                    <label for="gridRadio1">
+                        <h5 id="option-selection">{{q.opt1}}</h5>
+                    </label>
+                </div>
+                <div class="quiz-choice">
+                    <input class="quiz-choice-input" type="radio" name="question_{{ q.id }}" id="gridRadio2" value="{{q.opt2}}">
+                    <label for="gridRadio2">
+                        <h5 id="option-selection">{{q.opt2}}</h5>
+                    </label>
+                </div>
+                <div class="quiz-choice">
+                    <input class="quiz-choice-input" type="radio" name="question_{{ q.id }}" id="gridRadio3" value="{{q.opt3}}">
+                    <label for="gridRadio3">
+                        <h5 id="option-selection">{{q.opt3}}</h5>
+                    </label>
+                </div>
+                <div class="quiz-choice">
+                    <input class="quiz-choice-input" type="radio" name="question_{{ q.id }}" id="gridRadio4" value="{{q.opt4}}">
+                    <label for="gridRadio4">
+                        <h5 id="option-selection">{{q.opt4}}</h5>
+                    </label>
+                </div>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn">Baigti</button>
+        </form>
+    </div>
+</html>
+{% endblock %}

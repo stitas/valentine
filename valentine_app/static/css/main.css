@@ -1,0 +1,121 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body{
+    background: rgb(227, 86, 119);
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    min-width: 30%;
+    min-height: 30%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 5px 5px 5px 3px rgb(228, 63, 101);
+    border-radius: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    padding: 5px 10px;
+    border: 1px solid rgb(228, 63, 101);
+}
+
+.fa-heart {
+    color: rgb(235, 7, 37);
+    font-size: 25px;
+    position: absolute;
+    animation:  heartMove linear 1;
+    top: -10vh;
+    z-index: 0;
+}
+
+.fa-heart-black {
+    color: rgb(0,0,0);
+    font-size: 25px;
+    position: absolute;
+    animation:  heartMove linear 1;
+    top: -10vh;
+    z-index: 0;
+}
+
+@keyframes heartMove {
+    0%{
+        transform: translateY(-10vh) ;
+    }
+    100%{
+        transform: translateY(110vh) ;
+    }
+}
+
+.btn {
+    width: 300px; 
+    height: 50px;
+    border-radius: 30px;
+    background-color: rgb(228, 63, 101);
+    border: none;
+    color: white; 
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(233, 46, 90)
+}
+
+.question {
+    font-size: 16px;
+    padding: 20px 0;
+}
+
+
+#quiz-text {
+    font-size: 20px;
+}
+
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    border-radius: 25px;
+    position: relative;
+    background-color: rgb(235, 7, 37);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.quiz-container {
+    margin-top: 25px;
+}
+
+#quiz-result-text {
+    font-size: 18px;
+}
+
+.valentine-choose {
+    display: flex;
+    flex-direction: row;
+}

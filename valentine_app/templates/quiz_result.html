@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% if percent == 100 %}
+    <div id="container">
+      <p id="quiz-result-text">
+        100% !!!!!!!!! Man atrodo tikrai būsi mano valentinas
+      </p>
+      <img src="{% static 'images/high.jpeg' %}" alt="" />
+      <form action="{% url 'valentine' %}">
+        <input type="submit" class="btn" value="Valioooo" />
+      </form>
+    </div>
+    {% elif percent > 70 and percent < 100 %}
+    <div id="container">
+      <p id="quiz-result-text">
+        {{percent}}% Na ir žinai ir nežinai. Šita nuotrauka puikiai
+        reprezentuoja mane, kai galvoju ar būsi mano valentinas
+      </p>
+      <p id="quiz-result-text">
+        <img src="{% static 'images/mid.jpeg' %}" alt="" />
+      </p>
+
+      <form action="{% url 'quiz' %}">
+        <input type="submit" class="btn" value="Kartoti !" />
+      </form>
+    </div>
+    {% elif percent <= 70 %}
+    <div id="container">
+      <p id="quiz-result-text">
+        {{percent}}% Visiškai nežinai nieko. Ar išvis mokeisi vakar ??!?!?
+        Tikriausiai jau nakti telefoną maigei. Busiu gailestingas ir duosiu
+        perrašyt, bet, kad daugiau man nepasikartotu taip ! (Nuotrauka aš dabar)
+      </p>
+      <p id="quiz-result-text">
+        <img src="{% static 'images/low.jpeg' %}" alt="" />
+      </p>
+
+      <form action="{% url 'quiz' %}">
+        <input type="submit" class="btn" value="Bandyk dar karta..." />
+      </form>
+    </div>
+    {% endif %}
+  </body>
+</html>
+{% endblock %}
